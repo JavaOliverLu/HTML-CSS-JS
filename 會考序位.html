@@ -1,0 +1,123 @@
+<head>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><link href="../../../../css/style.css" rel="stylesheet" type="text/css" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+	個別序位查詢
+</title></head>
+<body>
+    <!--2014.05.26 Armstrong 新增個別序位查詢服務 - start -->
+    <div id="Panel_Order">
+	
+        <fieldset>
+            <legend>個別序位查詢服務<!--(試模擬)--></legend>
+            <div style="text-align: center; font-weight: bold; font-size: 18px;">
+                <span id="Label_AcademicYear">109</span>
+                學年度
+                <span id="Label_Area_Name">中投區</span>
+                學生免試入學超額比序（未含志願序積分）
+            </div>
+            <div style="text-align: center; font-weight: bold; font-size: 18px;">個別序位之比率及累積人數區間</div>
+            <div style="text-align: center; font-weight: bold; font-size: 18px;">查詢服務</div>
+
+            <br />
+
+            <span id="Label_OpenNotice" style="font-weight: bold; font-size: 18px; color: red;">開放時間：2020/6/17 12:00:00 ~ 2020/7/10 23:59:59</span>
+
+            <br />
+
+            <span id="Label_Msg" style="display: block; font-weight: bold; font-size: 16px; color: red; text-align: center;"></span>
+
+            <br>
+
+            <div id="pn_result">
+		
+                <div style="font-weight: bold; font-size: 18px;">
+                    學生：<span id="Label_Name">陸紹祺</span>
+                    身分證字號：<span id="Label_ID">A130908556</span><br />
+                    <br />
+                    個別序位之比率及累積人數區間(不分男女):<br />
+                    比率區間：<span id="Label_TopPercent">2.01</span>
+                    ％～
+                    <span id="Label_DownPercent">2.41</span>
+                    ％<br />
+                    累積人數區間：<span id="Label_TopNum">546</span>人～
+                    <span id="Label_DownNum">658</span>
+                    人<br />
+                    <br />
+                    <span id="Label_Title">個別序位之比率及累積人數區間(男生):</span><br />
+                    比率區間：<span id="Label_TopPercent2">2.52</span>
+                    ％～
+                    <span id="Label_DownPercent2">3.30</span>
+                    ％<br />
+                    累積人數區間：<span id="Label_TopNum2">362</span>人～
+                    <span id="Label_DownNum2">474</span>
+                    人<br />
+
+                </div>
+            
+	</div>
+
+
+            <div style="font-size: 16px; color: blue;">
+                備註：<br />
+                <ol>
+                    <li>個別序位之比率及累積人數區間計算以原就學區內之升學學生（扣除已錄取且報到直升入學、專業群科甄選入學、國中技藝技能優良學生甄審入學、產業特殊需求類科優先入學、實用技能學程、優先免試入學錄取且報到之學生）人數為準。
+                    </li>
+                    <li>根據該區超額比序項目之分配及比序順次，計算該區學生之整體表現，由前至後排序，並以每一區間比率不低於百分之O．三且人數不少於一百人，計算其個別序位所屬區間。其比率均算至小數點第二位，第三位以下四捨五入；另就序位比率為後百分之二十以下者，得以同一比率區間呈現。
+                    </li>
+                    <li>本服務資訊僅供個人進行志願選填參考，任何個人、團體、學校或機關不得蒐集處理、公開呈現或做其他目的之使用。
+                    </li>
+                    <li>選填志願時，除參考本服務資訊外，務必考量國中學生生涯輔導紀錄手冊及生涯發展規劃書，並參酌以往免試入學志願選填試探後，學校所給予之輔導建議，依照興趣、性向和能力，將志願序填滿，以選擇適宜的學校就近入學。
+                    </li>
+                </ol>
+            </div>
+
+        </fieldset>
+    
+</div>
+    <!--2014.05.26 Armstrong 新增個別序位查詢服務 - end -->
+
+    <form name="form1" method="post" action="./StudentSearch.aspx" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="taeejgHdz19kd/AsVfXqnfnnkUBaFFJIfvbVe+Q3kiq6934z2a97xQr4uQTIeeadmqjvQ+ZlbuKk+RSpp40cyMyE5wN66AIpEsb9ftNCcLMHb6kj2zJfF70/lT5hk7i/dgL1zjBqUN4T4tJVqBX1EY4CLWcTzTSF1xC94bVRXY8L1rnhd9FFCX8a/gFYr0leLFYK4oawZr7jhU5iLhU0hJSBqH9My0MdHl3GOqTuW+Hb/0b4c9lL5S0DuaEbyIp71ytejyxaz0WG0STE+TtHjRx9WOMTOmFodX98LbTrbdxdL1QFStQkP8Bpfarmy2w7rfquvcYbr0fpNi/OP3VcuJBtcb1TXKRGi+NlA61yNGirKZmjyTQdvJzxYuJbSW7MUfGfup4oiKG3AD+vmchzv1oa0y6pXC7KEW2PBuJz06GGwvLXleS6BwMPNL+RHzK0KolyCh9PJpzVFfwskOPF3XJ5AmU9zArJd3TeKEO2zBtZvzotABEuw3b398BOpcGZyDh90Pmt7puGeAjmJ9ix62F5hhwPnFq4XF5wjSWYM+KG2ND0uP37CsGqUffXzNLgBKStEvysFCmcdAjCQaXua1SJnyW15+GQxEEhqpHLJgoekSNJPLvuSEvH/Psbp9J2GhAt8N18T5FrqoS/YgaUAmJz8NFVdOFmgbT5LuwiM8ps1pU0xsdZModdoaPSbEObK0iJhDa1OZLFQq48SgWuGLaa0LRaA+7Cr4d5gi02rRxTo9wOZeJDfYemkfd8cwolJxMCpw==" />
+</div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+alert("送出成功!");//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D6D085ED" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="MBr4ZA3T3L6S8CNdiF77Et/NTPS8UtxMzNX6t3s38ITt0KZ0wVLFpD1jcgoTf+eYczSGfobzGa9rcIS0A6nP3fCY1u5DAggRiir76M3yyZHAOQipzO13nVTwn9fNgM+czmhcabxsQ0KdllmbBqzt7oC+LS38c9LLOn8c3eGCgRfxWXWs" />
+</div>
+        <div id="Panel_ReadRankPercent">
+	
+
+            <br />
+
+            <div class="checkbox">
+                <label>
+                    <span disabled="disabled"><input id="CheckBox_Read" type="checkbox" name="CheckBox_Read" checked="checked" disabled="disabled" /></span>
+                    <span style="font-weight: bold">我已閱讀上述內容</span>
+                </label>
+            </div>
+
+            <hr />
+
+            <div style="text-align: center;">
+                <span id="Label_ReadRankPercent_DateTime">您已於 2020/06/17 18:39:51 閱讀上述內容<br></span>
+
+                <input type="submit" name="Button_Read" value="確認送出" id="Button_Read" class="btn btn-success" />
+
+
+            </div>
+
+        
+</div>
+
+
+    </form>
+</body>
+</html>
