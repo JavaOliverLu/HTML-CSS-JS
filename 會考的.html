@@ -1,0 +1,224 @@
+<!--
+    程式名稱：ProgressBar
+    功用：進度載入顯示頁面
+    參考頁面：http://tieba.baidu.com/p/1983190916
+    建立時間：2014.04.07
+    建立人員：Armstrong
+    修改歷程：
+    2013.12.30 新增
+
+    使用方式：
+    C#
+    //開始
+    private void beginProgress()
+    {
+        //根據ProgressBar.htm顯示進度條介面
+        string templateFileName = Path.Combine(Server.MapPath("."), "ProgressBar.html");
+        StreamReader reader = new StreamReader(@templateFileName, System.Text.Encoding.GetEncoding("UTF-8"));
+        string html = reader.ReadToEnd();
+        reader.Close();
+        Response.Write(html);
+        Response.Flush();
+    }
+
+    private void setProgress(int percent,string msg)
+    {
+        string jsBlock = "<script>SetPorgressBar('" + percent.ToString() + "','" + msg "'); </script>";
+        Response.Write(jsBlock);
+        Response.Flush();
+    }
+
+    private void finishProgress()
+    {
+        string jsBlock = "<script>SetCompleted();</script>";
+        Response.Write(jsBlock);
+        Response.Flush();
+    }
+
+    private void Page_Load(object sender, System.EventArgs e)
+    {
+        beginProgress();
+        for (int i = 1; i <= 100; i++)
+        {
+            setProgress(i,'');
+
+            System.Threading.Thread.Sleep(50);
+        }
+        finishProgress();
+    }
+
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "HTTP://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="HTTP://www.w3.org/1999/xhtml" id="mainWindow">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="../../../../../Scripts/jquery-1.10.0.min.js"></script>
+    <script type="text/javascript" src="../../../Scripts/jquery-1.10.0.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        function SetPorgressBar(pos, msg) {
+            //設置進度條居中
+            var screenHeight = window["mainWindow"].offsetHeight;
+            var screenWidth = window["mainWindow"].offsetWidth;
+            ProgressBarSide.style.width = Math.round(screenWidth / 2);
+            ProgressBarSide.style.left = Math.round(screenWidth / 4);
+            ProgressBarSide.style.top = Math.round(screenHeight / 2);
+            ProgressBarSide.style.height = "21px";
+            ProgressBarSide.style.display = "";
+
+            //設置進度條百分比
+            ProgressBar.style.width = pos + "%";
+            ProgressText.innerHTML = pos + "%";
+
+            if (msg != "") {
+                //console.dir(msg);
+                $("#Msg").html(msg);
+
+            }
+
+        }
+
+        //完成後隱藏進度條
+        function SetCompleted() {
+            //FinishText.style.display = "block";
+            //RunText.style.display = "none";
+            //ProgressBarSide.style.display = "none";
+            document.getElementById("ProgressBarSide").style.display = "none";
+            document.getElementById("Msg").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+
+    <div id="Msg">處理中：</div>
+    <div id="ProgressBarSide" style="position:absolute;height:21x;width:100px;color:Silver;border-width:1px;border-style:Solid;display:none">
+        <div id="ProgressBar" style="position:absolute;height:21px;width:0%;background-color:#3366FF"></div>
+        <div id="ProgressText" style="position:absolute;height:21px;width:100%;text-align:center"></div>
+    </div>
+</body>
+</html><script>SetPorgressBar('0','處理中...'); </script><script>SetPorgressBar('10','資料下載中...'); </script><script>SetPorgressBar('15','資料建置中...'); </script><script>SetPorgressBar('15','資料建置中0/1...'); </script><script>SetPorgressBar('50','報表產生中...'); </script><script>SetPorgressBar('90','報表產生中(1)...'); </script><script>SetPorgressBar('95','下載建置中...'); </script><script>SetPorgressBar('100','檔案建置完成...'); </script>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+
+</title>
+
+    <script type="text/javascript">
+        function StartDownload() {
+            eo_GetObject('Downloader1').start();
+            EndDownload();
+        }
+        function EndDownload() {
+            $("#Downloader1_trial").html("");//隱藏Downloader授權文字
+        }
+
+    </script>
+
+</head>
+<body>
+    <form name="form1" method="post" action="./Rep_A02.aspx" id="form1">
+<div>
+<input type="hidden" name="__eo_obj_states" id="__eo_obj_states" value="" />
+<input type="hidden" name="__eo_sc" id="__eo_sc" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(EO1153)=='undefined'){EO1153=new Object();EO1153.f=new Object();EO1153.g=new Object();EO1153.r=new Object();EO1153.g.a=EO1153.r;EO1153.r.getVersion=function(){return "11.53";};EO1153.r.getLoader=function(){return typeof(EO1153.g.d)!='undefined'?EO1153.g.d:null;};EO1153.r.getNS=function(){return "EO1153";};};
+EO1153.r.product='EO.Web';
+EO1153.r.form='form1';
+EO1153.r.autoInit=false;
+EO1153.r.handlerUrl='/NoExamImitate_CT/NoExamImitate/eo_web.ashx';
+
+//]]>
+</script>
+<script type="text/javascript" src="/NoExamImitate_CT/NoExamImitate/eo_web.ashx?id=363f39da-511f-44f8-9c20-4fddfa5c7593"></script>
+<script type="text/javascript" src="/NoExamImitate_CT/NoExamImitate/eo_web.ashx?id=90299fdc-a5d8-4098-ad30-df28782dc0c1"></script>
+<script type="text/javascript" src="/NoExamImitate_CT/NoExamImitate/eo_web.ashx?id=9e08e91b-229f-4dde-8595-8dfab3c57588"></script>
+<script type="text/javascript" src="/NoExamImitate_CT/NoExamImitate/eo_web.ashx?id=a008011e-59a4-4c78-9958-166e8665c7e1"></script>
+<script type="text/javascript" src="/NoExamImitate_CT/NoExamImitate/eo_web.ashx?id=24e03ba7-27ef-4afd-9b52-dc3939cadcc1"></script>
+<script type="text/javascript" src="/NoExamImitate_CT/NoExamImitate/eo_web.ashx?id=1c26da02-644a-4111-8735-b636c85cf55d"></script><div id="eo_root"></div><style type="text/css">
+.eo_tag_style{}
+</style>
+<style type="text/css">
+table.eo_no_border_spacing { border-spacing: 0; border-collapse: collapse; }
+table.eo_td_no_padding td {padding: 0px;}
+table.eo_border_collapse { border-collapse: collapse; }
+.eo_align_center { text-align: center;}
+.eo_align_left { text-align: left;}
+.eo_transparent { filter:alpha(opacity=0);-moz-opacity:0.0;opacity:0.0; }
+.eo_fullheight { height: 100%; }
+a.eo_plain_link.link { border: none; }
+a.eo_plain_link.visited { border: none; }
+a.eo_plain_link.hover { border: none; }
+a.eo_plain_link.active { border: none; }
+ul.eo_list { list-style-type: none; margin: 0px; padding: 0px; }
+ul.eo_list li { list-style: none; margin: 0px; padding: 0px; white-space: nowrap; }
+.eo_text { font-family: Verdana; font-size: 10px; }
+
+</style>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="3133DA10" />
+	<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+	<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+</div>
+    <div>
+        <br/>
+        <br/>
+        <div style="position:absolute; top:-1000px;"><input type="hidden" name="eo_version" value="11.0.53.2" /><input type="hidden" name="eo_style_keys" value="/wFk" /></div>
+<script type="text/javascript">
+//<![CDATA[
+EO1153.r.product='EO.Web';
+EO1153.r.debug=-1;
+EO1153.r.aspnet11=0;
+var eo_culture_i=eval('({"name":"","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":".","IsReadOnly":true,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":",","CurrencySymbol":"\u00A4","NaNSymbol":"NaN","CurrencyNegativePattern":0,"NumberNegativePattern":1,"PercentPositivePattern":0,"PercentNegativePattern":0,"NegativeInfinitySymbol":"-Infinity","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":".","NumberGroupSeparator":",","CurrencyPositivePattern":0,"PositiveInfinitySymbol":"Infinity","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":".","PercentGroupSeparator":",","PercentSymbol":"%","PerMilleSymbol":"\u2030","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"AM","Calendar":{"MinSupportedDateTime":"@-62135568000000@","MaxSupportedDateTime":"@253402300799999@","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2029,"IsReadOnly":true},"DateSeparator":"/","FirstDayOfWeek":0,"CalendarWeekRule":0,"FullDateTimePattern":"dddd, dd MMMM yyyy HH:mm:ss","LongDatePattern":"dddd, dd MMMM yyyy","LongTimePattern":"HH:mm:ss","MonthDayPattern":"MMMM dd","PMDesignator":"PM","RFC1123Pattern":"ddd, dd MMM yyyy HH\':\'mm\':\'ss \'GMT\'","ShortDatePattern":"MM/dd/yyyy","ShortTimePattern":"HH:mm","SortableDateTimePattern":"yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\'-\'MM\'-\'dd HH\':\'mm\':\'ss\'Z\'","YearMonthPattern":"yyyy MMMM","AbbreviatedDayNames":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"ShortestDayNames":["Su","Mo","Tu","We","Th","Fr","Sa"],"DayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"AbbreviatedMonthNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthNames":["January","February","March","April","May","June","July","August","September","October","November","December",""],"IsReadOnly":true,"NativeCalendarName":"Gregorian Calendar","AbbreviatedMonthGenitiveNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthGenitiveNames":["January","February","March","April","May","June","July","August","September","October","November","December",""]}})');//eo_culture_i
+var eo_culture=eval('({"name":"zh-TW","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":".","IsReadOnly":false,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":",","CurrencySymbol":"NT$","NaNSymbol":"不是一個數字","CurrencyNegativePattern":1,"NumberNegativePattern":1,"PercentPositivePattern":1,"PercentNegativePattern":1,"NegativeInfinitySymbol":"負無窮大","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":".","NumberGroupSeparator":",","CurrencyPositivePattern":0,"PositiveInfinitySymbol":"正無窮大","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":".","PercentGroupSeparator":",","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"上午","Calendar":{"MinSupportedDateTime":new Date(-62135568000000),"MaxSupportedDateTime":new Date(253402300799999),"AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2029,"IsReadOnly":false},"DateSeparator":"/","FirstDayOfWeek":0,"CalendarWeekRule":0,"FullDateTimePattern":"yyyy\u0027年\u0027M\u0027月\u0027d\u0027日\u0027 tt hh:mm:ss","LongDatePattern":"yyyy\u0027年\u0027M\u0027月\u0027d\u0027日\u0027","LongTimePattern":"tt hh:mm:ss","MonthDayPattern":"M\u0027月\u0027d\u0027日\u0027","PMDesignator":"下午","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"yyyy/M/d","ShortTimePattern":"tt hh:mm","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"yyyy\u0027年\u0027M\u0027月\u0027","AbbreviatedDayNames":["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],"ShortestDayNames":["日","一","二","三","四","五","六"],"DayNames":["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],"AbbreviatedMonthNames":["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月",""],"MonthNames":["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月",""],"IsReadOnly":false,"NativeCalendarName":"西曆 (中文)","AbbreviatedMonthGenitiveNames":["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月",""],"MonthGenitiveNames":["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月",""]}})');//eo_culture
+
+//]]>
+</script>
+<div id="Downloader1"><iframe id="" width="0%" height="0%" style="display:none" src="/NoExamImitate_CT/NoExamImitate/eo_web.ashx?id=D877A66C-9E75-4d29-BD48-426B705280FD&dldp=D62639ADF377E09AFCC1F2DBE43901285DEF4BB27DB7582343E66520A31F492AC5D5DC8A3EF0475C48C3FF02E23F6E8DBF93BCFC226F023A552328F69DBFE33F444E97DDFE161137B5F4638CDC1A50BBF91B4201515CB9BA2AF30D28C7D2FFE80E5ECA2ED95F7F573C10865FD31249321E67B952039766A68252CAF984F39E3B089D9C7CFB5F81440B6B4F9FA830D9824727B0F86773170B3478CE09135D41F47F9EE10F1A230FCE294677081A7243B90B03A698417DD79E12FEFBDD5EAC13C6508055B6803552DBB1D34C08813379AEACE7DFBB70D33BC286F94E6AF0217E5A79794B0AE043336BD64FC1AD6E98EE711D774EE9110BD78F6EE6DE7AC8D382C83871F71423B5C90BF21EEF45500FC309BADDD75558C505A8B754031FDBAD5CF2E7189C76A1F089D82D2F19A570A35293044E260CCEE51518F935BC4493FC45A3AB47B978D6B6D8EAB1F8F9785B34FAFA8D04C45B0624F78AC7AE35902C18700B9098607EB8D5C3A0F49515B99DBC225BF6AB602F33CBF7C4BC24D6E98E914927B6DEBB0B13506938F58CB25BA929E470F1CDE7C819B63AF922215F2221ED348F64454EED603CFC976056C33DF2A56BFCBEB0A0AC3EEE5CBE915B8C8173B8FA1F623D4BA7231A24D4D6EA654835C38D743237A02FE2B186FF720AA21F39F70079CECD15607CC04983988F187B240F92238FA437C75C3208E6CE49BA656F0DF7EC9016DD0132163B1709185E9E581DCC21CC68FF114E3B2C2707E644732D525B229E102724FA17843C781635BD9ACEAB7127C5BBD9C40AD77FA2E3DF0D28FFD5756CDF3F6ABF7A0826FBDB67FF39947A5AABF570426A22DC8BDA332F5F244DC4B7F9F9E400117B5EB43D3CFF1B44482962A697573C261EE558918A7FE866756D6343135B90FF789ABF3F5AFCE73FA5F1AFE91CBC4B10DE9B6C75823859B4F3DD6BA92220866A6C3350F1E995C9AEAC0ABE3A492E75C227A51F84034AA012F062CF3B32E995CD5861EF605678AA3297FC143C95BDCBC881477983C15A65C8A4D17B71D95FDC64EDC11794936548D750A8786A7E43C38532EBE9CB7AF93AB2F57EDDE66D4A3AEBC9B7AA23B262ACFA1BD3FB6F7689000ACB8A91066E4E04C29E15A272FB3F079D09FBAC0B8FF24560E2805784ACAA66E3D2ABC5A612FD013A89C2C94629C926DA36CA66FBA5663F6861D743208079B13A39F374EB042A0B57879EE7B94483AB" ></iframe></div>
+<script type="text/javascript">
+//<![CDATA[
+EO1153.g.d.k("ldr|i|fmt|u|c|dl", function(){EO1153.g.b.Downloader1=0;EO1153.r._o_Downloader1=EO1153.f.abz(EO1153.r._o_Downloader1,"Downloader1",new EO1153.f.adnb([[,"Downloader1","Downloader","Downloader1",,,,,,,"__doPostBack(\'Downloader1\',\'_eo_arg_\')"],"Button1","/NoExamImitate_CT/NoExamImitate/eo_web.ashx?id=D877A66C-9E75-4d29-BD48-426B705280FD&dldp=046DB3691F5611DCD4CC4319971ED9BABB0F1E1100E5B3B81C2B7C088A7C8726E66CE6056598F756FDC13995CD2080F1E3C5640DD7D076AE7F89FE8FC226D9BD8BEE179E630D013AF1D804B4C548008601BE2AEFEDAD95B2986FC9F199CD2A310C898E18BF543F176022A50495CF41A39651C2715149CD9E415303762DAF470C2608468EB1642FE6433F9CFD5991222DA51E5CD12B8902E85F2F5110E5D3D3BE5967AF34DB4C2CFDC8FD7E5FA804C9157F13818D993099C8096EB4094C04876E59355890B303BACB7B23EAE18318F3968C4B3735FC5A564A20F2D719E27149AA7F9BBE011C3CE64450271DA82E5ED37207E08BC4288C3C9C1450CD3233671FB554487E73ED8D5CDAC96B82238F92857EB5267795D3B05DCBD0F609126A0564FC3044D879C75B100EB167BB070949FD6F9661BF649525C111DB37D5BE10C49401F0004F30DA0EB704EFCEA0BCD627F0E78254A3A6A726CD443557932A08FD532CCFF2FD32DB98D7D6D0631691A46EFB4E7700E7F8398F7B5ECD4D9E9306A59F953EB60F9076E27332B4B9A52FCD4CF6BB68342BA7CD1DF4A9236052D0F489EE0FD9CE7A4477EC3D9A52D01BEF50C0623A6D5F6E1E2C8401D27C8BBE8D97CBAD155FFD21DA",,"Label1",,,,"f866788d-8435-4c93-84ea-7309ff8387d1"]),"Downloader");EO1153.f.ahf(EO1153.r._o_Downloader1,1,null, 0);});
+//]]>
+</script>
+
+        <span id="Label1"> 如果系統沒自動下載檔案，請點擊 <a href='/NoExamImitate_CT/NoExamImitate/eo_web.ashx?id=D877A66C-9E75-4d29-BD48-426B705280FD&dldp=D62639ADF377E09AFCC1F2DBE43901285DEF4BB27DB7582343E66520A31F492AC5D5DC8A3EF0475C48C3FF02E23F6E8DBF93BCFC226F023A552328F69DBFE33F444E97DDFE161137B5F4638CDC1A50BBF91B4201515CB9BA2AF30D28C7D2FFE80E5ECA2ED95F7F573C10865FD31249321E67B952039766A68252CAF984F39E3B089D9C7CFB5F81440B6B4F9FA830D9824727B0F86773170B3478CE09135D41F47F9EE10F1A230FCE294677081A7243B90B03A698417DD79E12FEFBDD5EAC13C6508055B6803552DBB1D34C08813379AEACE7DFBB70D33BC286F94E6AF0217E5A79794B0AE043336BD64FC1AD6E98EE711D774EE9110BD78F6EE6DE7AC8D382C83871F71423B5C90BF21EEF45500FC309BADDD75558C505A8B754031FDBAD5CF2E7189C76A1F089D82D2F19A570A35293044E260CCEE51518F935BC4493FC45A3AB47B978D6B6D8EAB1F8F9785B34FAFA8D04C45B0624F78AC7AE35902C18700B9098607EB8D5C3A0F49515B99DBC225BF6AB602F33CBF7C4BC24D6E98E914927B6DEBB0B13506938F58CB25BA929E470F1CDE7C819B63AF922215F2221ED348F64454EED603CFC976056C33DF2A56BFCBEB0A0AC3EEE5CBE915B8C8173B8FA1F623D4BA7231A24D4D6EA654835C38D743237A02FE2B186FF720AA21F39F70079CECD15607CC04983988F187B240F92238FA437C75C3208E6CE49BA656F0DF7EC9016DD0132163B1709185E9E581DCC21CC68FF114E3B2C2707E644732D525B229E102724FA17843C781635BD9ACEAB7127C5BBD9C40AD77FA2E3DF0D28FFD5756CDF3F6ABF7A0826FBDB67FF39947A5AABF570426A22DC8BDA332F5F244DC4B7F9F9E400117B5EB43D3CFF1B44482962A697573C261EE558918A7FE866756D6343135B90FF789ABF3F5AFCE73FA5F1AFE91CBC4B10DE9B6C75823859B4F3DD6BA92220866A6C3350F1E995C9AEAC0ABE3A492E75C227A51F84034AA012F062CF3B32E995CD5861EF605678AA3297FC143C95BDCBC881477983C15A65C8A4D17B71D95FDC64EDC11794936548D750A8786A7E43C38532EBE9CB7AF93AB2F57EDDE66D4A3AEBC9B7AA23B262ACFA1BD3FB6F7689000ACB8A91066E4E04C29E15A272FB3F079D09FBAC0B8FF24560E2805784ACAA66E3D2ABC5A612FD013A89C2C94629C926DA36CA66FBA5663F6861D743208079B13A39F374EB042A0B57879EE7B94483AB'>here</a> 直接下載(超過1200秒後檔案將清除，請關閉視窗後再重新下載)！ </span>
+        <br/>
+        <span id="Label_Msg"></span>
+        <input id="Button1" type="button" value="重新下載" style="display:none" />
+        
+        
+        <br/>
+        <span id="Label_Stopwatch">頁面執行時間：847.4781毫秒</span>
+
+    </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script>EndDownload(); </script></form>
+</body>
+</html>
