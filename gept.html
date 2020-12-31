@@ -1,0 +1,214 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="X-UA-Compatible" content="IE=8" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Cache-Control" content="no-cache" /><meta http-equiv="Expires" content="0" /><title>
+	全民英語能力分級檢定測驗 GEPT
+</title><link rel="stylesheet" href="../include/index.css" type="text/css" media="screen" /><link rel="stylesheet" href="../include/score.css" type="text/css" media="screen" />
+    <script language="javascript" type="text/javascript">
+        function ToNext(obj, next_obj) {
+            var mTXT = document.getElementById(obj)
+            if (event.keyCode == 9 || event.keyCode == 16) return;
+            if (mTXT.value.length == mTXT.maxLength) {
+                document.getElementById(next_obj).focus();
+                //document.getElementById(next_obj).select();
+            }
+        }
+
+        function MemberNonLogin() {
+            alert("請先登入會員！");
+            top.location.href = "../Member/Login.aspx";
+        }
+    </script>
+    <script type="text/javascript" src="https://wfs.lttc.ntu.edu.tw/Subs/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="https://wfs.lttc.ntu.edu.tw/Subs/cmexsub.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            subset_sung("TranCode");
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PX8VTMH');</script>
+    <!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../include/ErrMsg.js"></script>
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PX8VTMH"
+            height="0" width="0" style="display: none; visibility: hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <form method="post" action="./Score_Data.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMTE0OTU4MTAzD2QWAmYPZBYCAgMPZBYIAgEPDxYCHgRUZXh0BWM8aW1nIHNyYz0nLi4vaW1hZ2VzL2luZGV4XzAxX25NZW1iZXIuanBnJyB3aWR0aD0nMTAyMCcgaGVpZ2h0PScxMDknIHVzZW1hcD0nI0Jhbm5lck1hcCcgYm9yZGVyPScwJz5kZAIDDw8WAh4HVmlzaWJsZWhkZAIFDw8WBB8ABRk8ZGl2IGNsYXNzPSdsaW5lMic+PC9kaXY+HwFoZGQCBw9kFggCAQ8PFgIfAAU9MTHmnIgyMeOAgTIy5pel5Lit57Sa6Kqq5a+r5ris6amXPGJyPue2sui3r+afpeipouaIkOe4vue1kOaenGRkAgMPDxYCHwAFsQQ8dGFibGUgd2lkdGg9Jzc5MCcgYm9yZGVyPScwJyBjZWxsc3BhY2luZz0nMCcgY2VsbHBhZGRpbmc9JzAnIGNsYXNzPSd3ZWJEYXRhVGFibGUnPjx0ciBhbGlnbj0nY2VudGVyJyBjbGFzcz0nZGhlYWQnPiA8dGQgd2lkdGg9JzExMCc+5ris6amX5pel5pyfPC90ZD48dGQgd2lkdGg9JzEzMCc+6ICD6Kmm6Jmf56K8PC90ZD48dGQgd2lkdGg9JzEzMCc+5aeT5ZCNPC90ZD48dGQgd2lkdGg9JzEwNSc+6IG95Yqb5oiQ57i+PC90ZD48dGQgd2lkdGg9JzEwNSc+6Zax6K6A5oiQ57i+PC90ZD48dGQgd2lkdGg9JzEwNSc+5Y+j6Kqq5oiQ57i+PC90ZD48dGQgd2lkdGg9JzEwNSc+5a+r5L2c5oiQ57i+PC90ZD48L3RyPjx0ciBhbGlnbj0nY2VudGVyJz4gPHRkPjEwOS8xMS8yMTwvdGQ+PHRkPjkyMi0wMy0wMDc3MDwvdGQ+PHRkIHN0eWxlPSdwYWRkaW5nLXRvcDo5cHg7Jz48c3BhbiBjbGFzcz0iVHJhbkNvZGUiIHN0eWxlPSJmb250LXNpemU6MTRweDsiPumZuOe0ueelujwvc3Bhbj48L3RkPjx0ZD4xMDQ8L3RkPjx0ZD45OTwvdGQ+PHRkPjgwPC90ZD48dGQ+ODA8L3RkPjwvdHI+PC90YWJsZT5kZAIFDw8WBB8ABbYhPHRhYmxlIGJnY29sb3I9IiNkOWZmZWMiIGJvcmRlcj0iMCIgY2VsbHNwYWNpbmc9IjEiIHN0eWxlPSJib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOyBib3JkZXItc3BhY2luZzogMHB4OyBsZXR0ZXItc3BhY2luZzogMXB4OyBjb2xvcjogcmdiKDUxLCA1MSwgNTEpOyBmb250LWZhbWlseTog77+9TO+/vW7vv73vv73vv73vv73vv73vv70sICZxdW90O01pY3Jvc29mdCBKaGVuZ0hlaSZxdW90OywgVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiIHdpZHRoPSIxMDAlIj4NCgk8dGJvZHk+DQoJCTx0cj4NCgkJCTx0ZD4NCgkJCQk8c3BhbiBzdHlsZT0iY29sb3I6IHJnYigwLCAwLCAwKTsiPjxzdHJvbmcgc3R5bGU9Im1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJvcmRlcjogMHB4OyBvdXRsaW5lOiAwcHg7IHZlcnRpY2FsLWFsaWduOiBiYXNlbGluZTsgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7Ij4mYnVsbDs8L3N0cm9uZz48L3NwYW4+PHN0cm9uZz7mnKrpgZQ8L3N0cm9uZz7pgJrpgY7mqJnmupY8c3Ryb25nPuS5n+WPr+S7pTwvc3Ryb25nPjxzcGFuIHN0eWxlPSJjb2xvcjogcmdiKDAsIDAsIDI1NSk7Ij7nmbvpjITpq5jkuK3nlJ/lrbjnv5LmrbfnqIs8L3NwYW4+77yMPGEgaHJlZj0iaHR0cHM6Ly93d3cuZ2VwdC5vcmcudHcvU2NvcmUvZXBvcnRmb2xpby5hc3AiPjxzcGFuIHN0eWxlPSJjb2xvcjogcmdiKDAsIDAsIDI1NSk7Ij48dT7orYnnhafku6Pnorzlv6vpgJ/mn6U8L3U+PC9zcGFuPjwvYT7jgII8YnIgLz4NCgkJCQk8c3Ryb25nIHN0eWxlPSJjb2xvcjogcmdiKDAsIDAsIDApOyBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDsgbWFyZ2luOiAwcHg7IHBhZGRpbmc6IDBweDsgYm9yZGVyOiAwcHg7IG91dGxpbmU6IDBweDsgdmVydGljYWwtYWxpZ246IGJhc2VsaW5lOyI+JmJ1bGw7PC9zdHJvbmc+5Y+j6Kqq5ris6amX6YCa6YGO5qiZ5rqWJm5ic3A7LSZuYnNwO+WIhuaVuOmBlDgw5YiGKOWQqynku6XkuIrjgII8YnIgLz4NCgkJCQk8c3Ryb25nIHN0eWxlPSJjb2xvcjogcmdiKDAsIDAsIDApOyBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDsgbWFyZ2luOiAwcHg7IHBhZGRpbmc6IDBweDsgYm9yZGVyOiAwcHg7IG91dGxpbmU6IDBweDsgdmVydGljYWwtYWxpZ246IGJhc2VsaW5lOyI+JmJ1bGw7PC9zdHJvbmc+PHNwYW4gc3R5bGU9ImNvbG9yOiByZ2IoMCwgMCwgMCk7Ij7lr6vkvZzmuKzpqZfpgJrpgY7mqJnmupYmbmJzcDs8L3NwYW4+LSZuYnNwO+WIhuaVuOmBlDgw5YiGKOWQqynku6XkuIrjgII8YnIgLz4NCgkJCQk8c3Ryb25nIHN0eWxlPSJiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDsgY29sb3I6IHJnYigwLCAwLCAwKTsgbWFyZ2luOiAwcHg7IHBhZGRpbmc6IDBweDsgYm9yZGVyOiAwcHg7IG91dGxpbmU6IDBweDsgdmVydGljYWwtYWxpZ246IGJhc2VsaW5lOyI+JmJ1bGw7PC9zdHJvbmc+6IG96K6A5ris6amX6YCa6YGO6ICF77yM5Y+v6Ieq6LK7PGEgaHJlZj0iaHR0cHM6Ly93d3cuZ2VwdC5vcmcudHcvU2NvcmUvUmVTZW5kLmFzcCI+55Sz6KuL6IG96K6A6YCa6YGO6K2J5pu4PC9hPuOAgjxiciAvPg0KCQkJCTxzdHJvbmcgc3R5bGU9ImJhY2tncm91bmQ6IHRyYW5zcGFyZW50OyBjb2xvcjogcmdiKDAsIDAsIDApOyBtYXJnaW46IDBweDsgcGFkZGluZzogMHB4OyBib3JkZXI6IDBweDsgb3V0bGluZTogMHB4OyB2ZXJ0aWNhbC1hbGlnbjogYmFzZWxpbmU7Ij4mYnVsbDs8L3N0cm9uZz48c3BhbiBzdHlsZT0iY29sb3I6IHJnYigwLCAwLCAwKTsiPuWQhOe0muaVuOiBveiugOWPiuiqquWvq+Wbm+mghea4rOmpl+eahumAmumBjuiAhe+8jOWFjeiyu+eZvOe1puipsue0muaVuOWbm+mgheWQiOagvOitieabuCjoiIfmiJDnuL7llq7kuIDkvbXlr4Tnmbwp44CCPC9zcGFuPjwvdGQ+DQoJCTwvdHI+DQoJPC90Ym9keT4NCjwvdGFibGU+DQo8YnIgLz4NCjxhIGhyZWY9Imh0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9ZjUzMlZJakhnUVkiIHRhcmdldD0iX2JsYW5rIj48aW1nIGFsdD0iIiBzcmM9Imh0dHBzOi8vd3d3LmdlcHQub3JnLnR3L1dlYkZpbGUvQmFubmVyLzIwMTgwNTMwMTAwODA2LmpwZyIgc3R5bGU9IndpZHRoOiAxODBweDsgaGVpZ2h0OiA3MHB4OyIgLz48L2E+PGJyIC8+DQo8YnIgc3R5bGU9ImNvbG9yOiByZ2IoNTEsIDUxLCA1MSk7IGxldHRlci1zcGFjaW5nOiAxcHg7IGZvbnQtZmFtaWx5OiDvv71M77+9bu+/ve+/ve+/ve+/ve+/ve+/vSwgJnF1b3Q7TWljcm9zb2Z0IEpoZW5nSGVpJnF1b3Q7LCBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjUwLCAyNTAsIDIxMCk7IiAvPg0KPHAgc3R5bGU9ImNvbG9yOiByZ2IoNTEsIDUxLCA1MSk7IGZvbnQtZmFtaWx5OiDvv71M77+9bu+/ve+/ve+/ve+/ve+/ve+/vSwgJnF1b3Q7TWljcm9zb2Z0IEpoZW5nSGVpJnF1b3Q7LCBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyBsZXR0ZXItc3BhY2luZzogMXB4OyBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDsgbWFyZ2luOiAwcHg7IHBhZGRpbmc6IDBweDsgYm9yZGVyOiAwcHg7IG91dGxpbmU6IDBweDsgdmVydGljYWwtYWxpZ246IGJhc2VsaW5lOyI+DQoJPHNwYW4gc3R5bGU9ImJhY2tncm91bmQtY29sb3I6IHJnYigyNTAsIDI1MCwgMjEwKTsiPuOAjOWFqOawkeiLseaqouOAjeaPkOS+m+iAg+eUn+WEquizqueahOe3muS4iuiHquWtuOW5q+aJi+OAgeWHuueJiOWTge+8gTwvc3Bhbj48L3A+DQo8dGFibGUgYm9yZGVyPSIwIiBzdHlsZT0iYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTsgYm9yZGVyLXNwYWNpbmc6IDBweDsgbGV0dGVyLXNwYWNpbmc6IDFweDsgY29sb3I6IHJnYig1MSwgNTEsIDUxKTsgZm9udC1mYW1pbHk6IO+/vUzvv71u77+977+977+977+977+977+9LCAmcXVvdDtNaWNyb3NvZnQgSmhlbmdIZWkmcXVvdDssIFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7IGJhY2tncm91bmQtY29sb3I6IHJnYigyNTAsIDI1MCwgMjEwKTsiIHdpZHRoPSIxMDAlIj4NCgk8dGJvZHk+DQoJCTx0cj4NCgkJCTx0ZD4NCgkJCQk8ZGl2IHN0eWxlPSJtYXJnaW4tdG9wOiAwcHg7IG1hcmdpbi1sZWZ0OiAzMHB4OyI+DQoJCQkJCTx1bCBzdHlsZT0icGFkZGluZy1yaWdodDogMHB4OyBwYWRkaW5nLWxlZnQ6IDBweDsgbWFyZ2luOiAwcHg7IGJvcmRlcjogMHB4OyBvdXRsaW5lOiAwcHg7IHZlcnRpY2FsLWFsaWduOiBiYXNlbGluZTsgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7IGxpc3Qtc3R5bGU6IGRlY2ltYWw7Ij4NCgkJCQkJCTxsaSBzdHlsZT0ibWFyZ2luOiAwcHg7IHBhZGRpbmc6IDBweDsgYm9yZGVyOiAwcHg7IG91dGxpbmU6IDBweDsgdmVydGljYWwtYWxpZ246IGJhc2VsaW5lOyBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDsiPg0KCQkJCQkJCeWFqOawkeiLseaqouaOqOiWpuaVmeadkO+8jOatoei/juiHs+OAjDxhIGhyZWY9Imh0dHBzOi8vZXNob3AubHR0Yy5vcmcudHcvIiBzdHlsZT0iYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJvcmRlcjogMHB4OyBvdXRsaW5lOiAwcHg7IHZlcnRpY2FsLWFsaWduOiBiYXNlbGluZTsiIHRhcmdldD0iX2JsYW5rIj5MVFRDZeizvOe2sjwvYT48c3BhbiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7Ij7jgI3pgbjos7zjgII8L3NwYW4+PC9saT4NCgkJCQkJCTxsaSBzdHlsZT0ibWFyZ2luOiAwcHg7IHBhZGRpbmc6IDBweDsgYm9yZGVyOiAwcHg7IG91dGxpbmU6IDBweDsgdmVydGljYWwtYWxpZ246IGJhc2VsaW5lOyBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDsiPg0KCQkJCQkJCTxzcGFuIHN0eWxlPSJjb2xvcjogcmdiKDI1NSwgMCwgMCk7Ij7jgJAyMDIx5paw6aGM5Z6L44CRPC9zcGFuPjxzcGFuIHN0eWxlPSJjb2xvcjogcmdiKDAsIDAsIDI1NSk7Ij7jgIzlhajmsJHoi7HmqqLlrpjmlrnpl5bpl5xHb++8mjwvc3Bhbj48YSBocmVmPSJodHRwczovL2x0dGMtbGkudHcvb2ZmaWNpYWxnZXB0cHJlcC8iPjxzcGFuIHN0eWxlPSJjb2xvcjogcmdiKDAsIDAsIDI1NSk7Ij7nt5rkuIrlgpnogIPoqrLnqIs8L3NwYW4+PC9hPjxzcGFuIHN0eWxlPSJjb2xvcjogcmdiKDAsIDAsIDI1NSk7Ij7jgI08L3NwYW4+77yMPHNwYW4gc3R5bGU9ImNvbG9yOiByZ2IoMjU1LCAwLCAwKTsiPuWFqOaWsOS4iuW4gjwvc3Bhbj7jgII8L2xpPg0KCQkJCQk8L3VsPg0KCQkJCTwvZGl2Pg0KCQkJPC90ZD4NCgkJPC90cj4NCgk8L3Rib2R5Pg0KPC90YWJsZT4NCjxiciAvPg0KHwFnZGQCBw8PFgIfAAUdPGRpdiBDbGFzcz0nY2xlYXInPjwvZGl2Pjxicj5kZGSdCO2auOfIi6G4HReQlrvz6ZUefKA1SaXDGDlyGXNDKg==" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="EAFC1A1D" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAK8AbOxzWE1oltdddAtCZ++Rhgl1hBi4RupDI+io19o3bbs4kU/zHaAMHfn35b/pPfE5LUxB1NEpTAsIIx8bavx" />
+</div>
+        <table width="1020" border="0" cellspacing="0" cellpadding="0" align="center">
+            <!---------- Logo ---------->
+            <tr>
+                <td>
+                    <span id="LogoLabel"><img src='../images/index_01_nMember.jpg' width='1020' height='109' usemap='#BannerMap' border='0'></span></td>
+            </tr>
+            <!---------- FunBar ---------->
+            <tr>
+                <td>
+                    </td>
+            </tr>
+            <!---------- Menu ---------->
+            <tr>
+                <td align="center" class="ListA">
+                    <!----- 左側選單 Start ----->
+                    
+                </td>
+            </tr>
+            <!---------- Main ---------->
+            <tr>
+                <td align="center">
+                    <br />
+                    
+    <script type="text/javascript" src="https://wfs.lttc.ntu.edu.tw/Subs/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="https://wfs.lttc.ntu.edu.tw/Subs/cmexsub.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            subset_sung("TranCode");
+            //subset_kai("TranCode");
+        });
+    </script>
+    <table width="930" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+                <img src="../images/in_03.jpg" width="45" height="81"></td>
+            <td background="../images/in_title_bg.jpg" width="838" align="left">
+                <img src="../images/in_title_Score.jpg" width="728" height="81"></td>
+            <td>
+                <img src="../images/in_05.jpg" width="47" height="81"></td>
+        </tr>
+        <tr>
+            <td background="../images/in_07.jpg" height="350">&nbsp;</td>
+            <td background="../images/in_08.jpg" align="center" valign="top">
+                <!---------- 主要表格內容Start ---------->
+                <br />
+                <div class="DataTitleWord" style="width: 500px;">
+                    <span id="ContentPlaceHolder1_Label_Title">11月21、22日中級說寫測驗<br>網路查詢成績結果</span>
+                </div>
+                <br />
+                <br />
+                <br />
+                <span id="ContentPlaceHolder1_Label_Data"><table width='790' border='0' cellspacing='0' cellpadding='0' class='webDataTable'><tr align='center' class='dhead'> <td width='110'>測驗日期</td><td width='130'>考試號碼</td><td width='130'>姓名</td><td width='105'>聽力成績</td><td width='105'>閱讀成績</td><td width='105'>口說成績</td><td width='105'>寫作成績</td></tr><tr align='center'> <td>109/11/21</td><td>922-03-00770</td><td style='padding-top:9px;'><span class="TranCode" style="font-size:14px;">陸紹祺</span></td><td>104</td><td>99</td><td>80</td><td>80</td></tr></table></span>
+                <br />
+                <br />
+                <br />
+                <div class="DataSearchWord" style="width: 500px;">
+                    (本測驗成績<font color="#DD0000">以成績單為準</font>)
+                </div>
+                <br />
+                <br />
+                <div class="SRWord2" style="width: 780px;">
+                    <span id="ContentPlaceHolder1_Label_Memo" class="memoFormTXT"><table bgcolor="#d9ffec" border="0" cellspacing="1" style="border-collapse: collapse; border-spacing: 0px; letter-spacing: 1px; color: rgb(51, 51, 51); font-family: �L�n������, &quot;Microsoft JhengHei&quot;, Verdana, Arial, Helvetica, sans-serif;" width="100%">
+	<tbody>
+		<tr>
+			<td>
+				<span style="color: rgb(0, 0, 0);"><strong style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: transparent;">&bull;</strong></span><strong>未達</strong>通過標準<strong>也可以</strong><span style="color: rgb(0, 0, 255);">登錄高中生學習歷程</span>，<a href="https://www.gept.org.tw/Score/eportfolio.asp"><span style="color: rgb(0, 0, 255);"><u>證照代碼快速查</u></span></a>。<br />
+				<strong style="color: rgb(0, 0, 0); background: transparent; margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">&bull;</strong>口說測驗通過標準&nbsp;-&nbsp;分數達80分(含)以上。<br />
+				<strong style="color: rgb(0, 0, 0); background: transparent; margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">&bull;</strong><span style="color: rgb(0, 0, 0);">寫作測驗通過標準&nbsp;</span>-&nbsp;分數達80分(含)以上。<br />
+				<strong style="background: transparent; color: rgb(0, 0, 0); margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">&bull;</strong>聽讀測驗通過者，可自費<a href="https://www.gept.org.tw/Score/ReSend.asp">申請聽讀通過證書</a>。<br />
+				<strong style="background: transparent; color: rgb(0, 0, 0); margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">&bull;</strong><span style="color: rgb(0, 0, 0);">各級數聽讀及說寫四項測驗皆通過者，免費發給該級數四項合格證書(與成績單一併寄發)。</span></td>
+		</tr>
+	</tbody>
+</table>
+<br />
+<a href="https://www.youtube.com/watch?v=f532VIjHgQY" target="_blank"><img alt="" src="https://www.gept.org.tw/WebFile/Banner/20180530100806.jpg" style="width: 180px; height: 70px;" /></a><br />
+<br style="color: rgb(51, 51, 51); letter-spacing: 1px; font-family: �L�n������, &quot;Microsoft JhengHei&quot;, Verdana, Arial, Helvetica, sans-serif; background-color: rgb(250, 250, 210);" />
+<p style="color: rgb(51, 51, 51); font-family: �L�n������, &quot;Microsoft JhengHei&quot;, Verdana, Arial, Helvetica, sans-serif; letter-spacing: 1px; background: transparent; margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+	<span style="background-color: rgb(250, 250, 210);">「全民英檢」提供考生優質的線上自學幫手、出版品！</span></p>
+<table border="0" style="border-collapse: collapse; border-spacing: 0px; letter-spacing: 1px; color: rgb(51, 51, 51); font-family: �L�n������, &quot;Microsoft JhengHei&quot;, Verdana, Arial, Helvetica, sans-serif; background-color: rgb(250, 250, 210);" width="100%">
+	<tbody>
+		<tr>
+			<td>
+				<div style="margin-top: 0px; margin-left: 30px;">
+					<ul style="padding-right: 0px; padding-left: 0px; margin: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: transparent; list-style: decimal;">
+						<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: transparent;">
+							全民英檢推薦教材，歡迎至「<a href="https://eshop.lttc.org.tw/" style="background: transparent; margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;" target="_blank">LTTCe購網</a><span style="background-color: transparent;">」選購。</span></li>
+						<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: transparent;">
+							<span style="color: rgb(255, 0, 0);">【2021新題型】</span><span style="color: rgb(0, 0, 255);">「全民英檢官方闖關Go：</span><a href="https://lttc-li.tw/officialgeptprep/"><span style="color: rgb(0, 0, 255);">線上備考課程</span></a><span style="color: rgb(0, 0, 255);">」</span>，<span style="color: rgb(255, 0, 0);">全新上市</span>。</li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<br />
+</span>
+                </div>
+                <!--<br /><br /><br />
+<div style="text-align:left;color: #333;padding: 11px 0px 11px 0px;font-size:14px;line-height:20px;">
+• <span style="color:#CC0000;">聽力及閱讀測驗通過標準</span> -- 兩項測驗成績總和達160分，且其中任一項不低於72分。
+<br />
+• <span style="color:#CC0000;">說寫測驗通過標準</span> -- 口說及寫作測驗分數均達80分(含)以上。
+<br />
+</div>-->
+                <br />
+                
+                <br />
+                <br />
+                <br />
+                <input type="submit" name="ctl00$ContentPlaceHolder1$Btn_ReSearch" value="重新查詢" id="ContentPlaceHolder1_Btn_ReSearch" class="button" />
+                <br />
+                <br />
+                <br />
+                <!---------- 主要表格內容End ---------->
+            </td>
+            <td background="../images/in_09.jpg">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <img src="../images/in_10.jpg" width="45" height="45"></td>
+            <td background="../images/in_11.jpg">&nbsp;</td>
+            <td>
+                <img src="../images/in_12.jpg" width="47" height="45"></td>
+        </tr>
+    </table>
+    <br />
+
+                </td>
+            </tr>
+            <tr>
+                <td align="center">&nbsp;</td>
+            </tr>
+            <!---------- Copyright ---------->
+            <tr>
+                <td height="102" bgcolor="#174B7B" align="center">
+                    <table width="800" border="0" cellspacing="0" cellpadding="3">
+                        <tr>
+                            <td>
+                                <div id="footer">
+                                    <script src="../include/footer.js" type="text/javascript"></script>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <map name="BannerMap">
+        <area shape="rect" coords="632,23,1005,87" href="http://www.lttc.ntu.edu.tw/" target="_blank">
+        <area shape="rect" coords="34,26,323,89" href="https://www.gept.org.tw/" target="_blank">
+    </map>
+</body>
+</html>
