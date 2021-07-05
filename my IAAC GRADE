@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IAAC | Your Status Page</title>
+    <!-- Basics -->
+<link rel="icon" href="../src/logo_tt_black_transparent.png">
+
+<!-- Imports -->
+<link rel="stylesheet" href="../css/main.css?t=2021x2">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../js/basics.js?t=2021x1" charset="utf-8"></script>
+
+<!-- Meta -->
+<meta charset="utf-8">
+<link rel='canonical' href='https://iaac.space/'>
+<meta property='og:image' content='../src/logo_black_small.png'>
+<link rel="shortcut icon" href="../src/logo_black_small.png">
+<meta name="description" content="The International Astronomy and Astrophysics Competition gives you the unique opportunity to show your knowledge and astronomy skills! The IAAC is an online astronomy competition for students from all countries. Win awards and cash prizes worth over 700 USD or become official IAAC ambassador in your country and inspire people for astronomy - take this opportunity and participate today!">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117037284-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117037284-7');
+  // gtag('config', 'AW-833725048');
+</script>
+  </head>
+  <body>
+
+    <!-- Basic Data -->
+    
+    <!-- Logo -->
+
+    <div class="menu login-menu"><a href="."><img src="../src/logo_tt_white_transparent.png" alt="IAAC Logo"></a></div>
+
+    <!-- Status Interface -->
+
+    <section class="section-transparent" >
+      <div class="content-wrapper interface-box">
+        <div class="interface-title">
+          Your Status Page
+          <span class="logout-button" onclick="logout();">Logout <i class="fas fa-times"></i></span>
+        </div>
+
+        <!-- Basic Information -->
+        <p>
+          <h4>Participant Information</h4>
+          <div class="participant-info"><i class="fas fa-user"></i>&nbsp; Your Full Name:</div>
+          Shao-chi Lu <br>
+          <div class="participant-info"><i class="far fa-envelope"></i>&nbsp; Your Email:</div>
+          shaoqilu870@gmail.com <br>
+          <div class="participant-info"><i class="fas fa-calendar-alt"></i>&nbsp; Date of Birth:</div>
+          13. December 2004 (Junior)<br>
+          <div class="participant-info"><i class="fas fa-globe-americas"></i>&nbsp; Country, City:</div>
+          Taiwan, DAJIA,TAICHUNG<br>
+          <div class="participant-info"><i class="fas fa-university"></i>&nbsp; School or Institute:</div>
+          NATIONAL EXPERIMENTAL HIGH SCHOOL AT CENTRAL TAIWAN SCIENCE PARK <br>
+          <!-- <div style="float: right; color: gray;">
+            <a style="color: gray; text-decoration: none;" href="statusedit"><i class="far fa-edit"></i> Edit Details (possible until 15. May)</a>
+          </div> <br>-->
+          <br>
+          <div class="participant-info"><i class="fas fa-file-invoice"></i>&nbsp;Performance Report:</div>
+          <a target='_blank' href='https://iaac.space/c/PerformanceReport-PR-2021-EBACA52AD3D-781962e89a1f7b9eaf6967d043f0dc76.pdf'>View or Download Report</a> <br>
+
+
+
+
+
+          <!-- Nach QR Announcement -->
+          <div class='participant-info'><i class='fas fa-trophy'></i>&nbsp; Your Certificates:</div>&nbsp;<b style='font-weight: 400;'><a target='_blank' href='https://iaac.space/c/Certificate-QR-2021-EBACA52AD3D-81f4a86dac233e425d2d30be76d1c881.pdf'>(1) Qualification Round 2021</a></b><br><div class="participant-info">&nbsp;</div> <b style='font-weight: 400;'><a target='_blank' href='https://iaac.space/c/Certificate-PF-2021-EBACA52AD3D-e794f16ff3ed7c3805ae9d4b57b66b41.pdf'>(2) Pre-Final Round 2021</a></b><br><div class="participant-info">&nbsp;</div> <b style='font-weight: 400;'><a target='_blank' href='https://iaac.space/c/Certificate-F-2021-EBACA52AD3D-925bbbc3c58ef19d1c5d13990e5a49ee.pdf'>(3) Final Round 2021</a></b><br>
+          <!-- Final Exam Video -->
+                  </p>
+
+
+
+
+
+        <p class="new-round">
+          <h4>Qualification Round 2021</h4>
+          
+          <div class='status-positive'><i class='fas fa-check'></i>&nbsp; Submission for Qualification Round 2021 found!</div><br>
+              <span class='status-positive'><i class='fas fa-trophy'></i>&nbsp; <u>Result:</u> You have solved enough problems to qualify for the pre-final round!</span>
+              <br><br class='mobile-br'>
+              Congratulations! Please find your official certificate for this round here:
+              <br class='mobile-br'><br class='mobile-br'>
+              <a class='round-certificate' target='_blank' href='https://iaac.space/c/Certificate-QR-2021-EBACA52AD3D-81f4a86dac233e425d2d30be76d1c881.pdf'>Download Certificate</a>
+        </p>
+
+        <p class="new-round">
+          <h4>Pre-Final Round 2021</h4>
+          <div class='status-positive'><i class='fas fa-check'></i>&nbsp; You are successfully registered for the pre-final round!</div>
+                  <br><br class='mobile-br'><span class='status-positive'><i class='fas fa-trophy'></i>&nbsp; <u>Result:</u> You have solved enough problems to qualify for the final round!</span>
+              <br><br class='mobile-br'>
+              Congratulations! Please find your official certificate for this round here: <br class='mobile-br'><br class='mobile-br'><a class='round-certificate' target='_blank' href='https://iaac.space/c/Certificate-PF-2021-EBACA52AD3D-e794f16ff3ed7c3805ae9d4b57b66b41.pdf'>Download Certificate</a>        </p>
+
+        <p class="new-round">
+          <h4>Final Round 2021</h4>
+          <div class='status-positive'><i class='fas fa-check'></i>&nbsp; You have completed the final round exam!</div><br>
+            <div class='status_info_box'>
+            <b><i class='fas fa-angle-double-right'></i> Result:</b>
+            The results of the final round of the International Astronomy and Astrophysics Competition 2021 have been evaluated: Your performance in the final round exam and throughout the overall competition makes you part of the <b>top 20%</b> of all participants of this year's competition! You have scored 13 points in the final round exam. This makes you part of the top 65% of final round participants. For achieving this result in the final round exam, you receive the <b>Bronze Honour</b> on your IAAC 2021 final round certificate: <br class='mobile-br'><br class='mobile-br'><a href='https://iaac.space/c/Certificate-F-2021-EBACA52AD3D-925bbbc3c58ef19d1c5d13990e5a49ee.pdf' class='round-certificate' target='_blank'>Final Round Certificate</a>
+
+            <br><br>
+            Your score and results are summarized in the table below:<br><br>
+
+            <table style='text-align: left; vertical-align:middle;'>
+              <tr style='vertical-align: middle;'>
+                <th style='border: 1px solid black; padding: 5px 8px;'>Exam Score</th>
+                <td style='border: 1px solid black; padding: 5px 8px;'>13 Points</td>
+              </tr>
+              <tr style='vertical-align: middle;'>
+                <th style='border: 1px solid black; padding: 5px 8px;'>All Participants</th>
+                <td style='border: 1px solid black; padding: 5px 8px;'>top 20%  &nbsp;<small><span style='color: gray;'>of ~4700 Participants*</font></small></td>
+              </tr>
+              <tr style='vertical-align: middle;'>
+                <th style='border: 1px solid black; padding: 5px 8px;'>Final Round</th>
+                <td style='border: 1px solid black; padding: 5px 8px;'>top 65% &nbsp;<small><font style='color: gray;'>of ~1300 Participants*</font></small></td>
+              </tr>
+              <tr style='vertical-align: middle;'>
+                <th style='border: 1px solid black; padding: 5px 8px;'>Honour</th>
+                <td style='border: 1px solid black; padding: 5px 8px;'>Bronze Honour</td>
+              </tr>
+            </table>
+            <br>
+            <small>*Note: A precise raking cannot be provided as other participants have the exact same score in the final round. However, you can multiple your percentile ranking with the total number of participants to get a personal estimate.</small>
+
+            <br><br>
+
+            Thank you for being part of this year's edition of IAAC and for taking part in this journey! You have displayed your ability and knowledge in the area of astronomy, astrophysics, and scientific problem-solving. Please keep your interest in astronomy and continue to engage in scientific activities. Your personal performance report lists all of your results and achievements of this year's competition: <a target='_blank' href='https://iaac.space/c/PerformanceReport-PR-2021-EBACA52AD3D-781962e89a1f7b9eaf6967d043f0dc76.pdf'>View or Download Report</a>
+
+            <br><br>
+
+            <b style='color: red;'><u>Important:</u> We will store your performance report and all your certificates only for a very limited time. <u>Please download and save all documents offline on your computer as soon as possible!</u></b>
+
+            <br><br><br>
+
+            <b>Announcement, Solutions, and More ...</b><br>
+            <ul>
+              <li>The official announcement is available online: <a href='https://iaac.space/en/announcement2020' target='_blank'>Announcement of 2021</a></li>
+              <li>All problems, questions and solutions for this year's rounds will be published on our website within the next months.</li>
+              <li>All certificates contain a verification ID that can be used to check their authenticity online on the following dedicated page: <a href='https://iaac.space/en/verify' target='_blank'>Verification Page</a></li>
+            </ul>
+            Feel free to share your success on social media and with your school.
+
+            <br><br><br>
+
+            <b>Contacting Your School</b><br>
+            We know that some participants need to inform their schools about their achievement. If you would like us to inform your school or teacher about your participation and your results, please fill out this form and we will contact your school or teacher within one day: <a href='https://iaac.space/en/schoolcontact?k=582681050913839187' target='_blank'>School Contact Form</a>
+
+            <br><br><br>
+
+            <!-- <b>Your Feedback</b><br>
+            To improve this competition and to make it a valuable experience for everyone, please tell us what you liked and what can be improved by giving us your <u>anonymous</u> feedback via this link - it does not take long, but it can make a big difference: <a href='https://iaac.space/en/feedback?k=654738644951767123'>Give Feedback</a>
+
+            <br><br><br> -->
+
+            <b>What's up next?</b><br>
+            The journey is not over! As a former IAAC participant, we will keep you updated about any upcoming competitions and interesting opportunities. You are, of course, warmly invited to participate again in next year's competition and other challenges. Also, we will inform you about any local IAAC meetups that take place. We will do our best to organize meetups in your region and to provide other challenges and opportunities. If you are interested in engaging even further with astronomy and the promotion of scientific challenges, feel free to apply for our IAAC ambassador program.
+
+            <br><br><br>
+
+            <center><b>Thank you for making this year's competition possible!</b></center>
+
+                    </p>
+
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+  <!-- Footer -->
+  <div class="footer-section login-footer" id="footer-footer">
+    IAAC | International Astronomy and Astrophysics Competition
+    <span>
+      <a href=".">IAAC Homepage</a> &nbsp;|&nbsp;
+      <a href="rules">Rules and Data Policy</a> &nbsp;|&nbsp;
+      <a href="impressum">Impressum</a>
+    </span>
+  </div>
+
+</footer>
+  </body>
+</html>
