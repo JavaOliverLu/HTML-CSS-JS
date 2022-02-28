@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <title>pm10 &#20272;&#28204;&#31995;&#32113;</title>
+
+  
+</head><body>
+<div style="text-align: center;"><big style="font-weight: bold;"><big><big><big><big>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+PM10 &#20272;&#28204;&#31995;&#32113;</big></big></big></big></big> V1.0&nbsp; &#32178;&#31449;&#20316;&#32773;:&#38520;&#32057;&#31098;&nbsp;
+&#30740;&#31350;&#32773;:&#29579;&#22521;&#23431; &#38518;&#24503;&#24887; &#38520;&#32057;&#31098;<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+&#35531;&#19978;&#20659;&#26377;&#20559;&#25391;&#30340;&#29031;&#29255;<input type="file" id="files"  accept=".jpg, .jpeg, .png"><br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&#35531;&#19978;&#20659;&#27794;&#20559;&#25391;&#30340;&#29031;&#29255;<input type="file" id="files2"  accept=".jpg, .jpeg, .png"><output id="list"></output><canvas id="canvas">
+<script>
+var photoone = [];
+var phototwo = [];
+var photodelete = [];
+var ans;
+function handleFileSelect(evt) {
+	var files = evt.target.files
+	for (var i = 0, f; f = files[i]; i++) {
+		var reader = new FileReader()
+		reader.onload = (function(theFile) {
+			return function(e) {
+
+			getInfo(e.target.result)
+					}
+		})(f)
+		reader.readAsDataURL(f)
+	}
+}
+function handleFileSelect2(evt) {
+	var files = evt.target.files
+	for (var i = 0, f; f = files[i]; i++) {
+		var reader = new FileReader()
+		reader.onload = (function(theFile) {
+			return function(e) {
+
+			getInfo2(e.target.result)
+					}
+		})(f)
+		reader.readAsDataURL(f)
+	}
+}
+
+document.getElementById('files').addEventListener('change', handleFileSelect, false)
+document.getElementById('files2').addEventListener('change', handleFileSelect2, false)
+
+function getInfo(pic) {
+	var ctxt = canvas.getContext('2d');
+	var img = new Image;
+	img.src = pic;
+	img.onload = function() {
+		ctxt.drawImage(img, 0, 0);
+		var data = ctxt.getImageData(0, 0, img.width, img.height).data;
+    
+    for (var i = 0; i <data.length; i += 1) {
+        photoone[i]= data[i*4];
+        
+    }
+	}
+}
+
+
+function getInfo2(pic) {
+	var ctxt = canvas.getContext('2d');
+	var img = new Image;
+	img.src = pic;
+	img.onload = function() {
+		ctxt.drawImage(img, 0, 0);
+		var data = ctxt.getImageData(0, 0, img.width, img.height).data;
+    var count=1;
+     for (var i = 0; i <data.length; i += 1) {
+        phototwo[i]= data[i*4];
+        
+    }
+	}
+}
+  function reply_click(clicked_id)
+  {
+	// document.write(mode(photodelete));
+	for (var i = 0; i <photoone.length; i += 1) {
+        photodelete[i]= phototwo[i]-photoone[i];
+   }
+    var mf = 1;
+var m = 0;
+var item;
+
+for (var i = 0; i < photodelete.length; i++) {
+  for (var j = i; j < photodelete.length; j++) {
+    if (photodelete[i] == photodelete[j]) m++;
+    if (mf < m) {
+      mf = m;
+      item = photodelete[i];
+    }
+  }
+
+  m = 0;
+}
+ans=(item+5.743)/1.0989;
+alert("PM10: "+ans+"mu g/m3");
+  }
+
+</script></canvas><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<big><big><big><button id="1" onclick="reply_click()">&#35336;&#31639;</button></big></big></big><br>
+</div>
+
+</body></html>
